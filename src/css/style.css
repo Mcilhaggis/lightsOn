@@ -5,33 +5,53 @@
 body {
     background-color: #bfeafd;
 }
-
-.lightBulb {
-    border-radius: 50%;
-    border: 1px solid grey;
-    height: 15rem;
-    width: 15rem;
-    margin: 3rem;
-}
-
 .App {
     min-height: 75vh;
     display: flex;
     place-items: center;
+    justify-content: center;
+}
+
+.container {
+    place-items: center;
+}
+
+.unitContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn {
+    margin: 0.25rem;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 0.5rem;
+    background-color: #ffffffad;
+    margin-left: 3rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    height: fit-content;
+}
+.lightBulb {
+    border-radius: 50%;
+    /* border: 1px solid grey; */
+    height: 10rem;
+    width: 10rem;
+    margin: 3rem;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(0, 0, 0, 0.055),
+        rgba(194, 194, 194, 0.2) 24px,
+        rgba(194, 194, 194, 0.2) 10px,
+        rgba(0, 0, 0, 0.116) 20px
+    );
 }
 
 .red {
     background-color: #ff1177;
-    animation: neon1 3.5s ease-in-out infinite alternate;
-}
-@keyframes neon1 {
-    from {
-        box-shadow: 0 0 0 #fff, 0 0 40px #ff1177, 0 0 70px #ff1177, 0 0 80px #ff1177, 0 0 100px #ff1177,
-            0 0 150px #ff1177;
-    }
-    to {
-        box-shadow: 0 0 0 #fff, 0 0 20px #ff1177, 0 0 35px #ff1177, 0 0 40px #ff1177, 0 0 50px #ff1177, 0 0 75px #ff1177;
-    }
+
+    box-shadow: 0 0 0 #fff, 0 0 30px #ff1177, 0 0 60px #ff1177, 0 0 20px #ff1177, 0 0 70px #ff1177, 0 0 90px #ff1177;
 }
 
 .blue {

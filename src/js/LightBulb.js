@@ -1,10 +1,8 @@
 import React from 'react';
 
-export default function LightBulb({colour}) {
+export default function LightBulb({ colour }) {
   return (
-    <div className={"lightBulb " + colour}>
-
-
-    </div>
+      <div className={"lightBulb " + colour}>
+      </div>
   );
 }

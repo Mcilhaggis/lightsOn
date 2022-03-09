@@ -7,9 +7,14 @@ export default function LightDisplay() {
     return (
         <div className="container">
             {colourOptions.map((colour, index) =>
-                <LightBulb
-                    colour={colour}
-                    key={index} />
+                <>
+                    <div className="unitContainer">
+                        <LightBulb
+                            colour={colour}
+                            key={index} />
+                        <button className="btn">Light Up</button>
+                    </div>
+                </>
             )}
 
         </div>
