@@ -5,6 +5,27 @@
 body {
     background-color: #bfeafd;
 }
+
+h1 {
+    text-align: center;
+    font-weight: 500;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    text-align: center;
+
+}
+@media (max-width: 768px) {
+    .container {
+        max-width: 30rem;
+        justify-content: center;
+
+    }
+}
+
 .App {
     min-height: 75vh;
     display: flex;
@@ -12,14 +33,38 @@ body {
     justify-content: center;
 }
 
-.container {
+.lightsContainer {
     place-items: center;
+    display: flex;
+    flex-shrink: 1;
+    flex-direction: row;
+    border: 1.5px white solid;
+    padding: 1.5rem;
+    border-radius: 25px;
+    background: rgba(237, 237, 237, 0.548);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+
+    width: 62vw;
 }
 
-.unitContainer{
+@media (max-width: 425px) {
+    .lightsContainer {
+        flex-direction: column;
+    }
+}
+
+.scoreboard {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: space-around;
+}
+
+.controlContainer {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 25px;
 }
 
 .btn {
@@ -28,17 +73,52 @@ body {
     border: none;
     padding: 0.5rem;
     background-color: #ffffffad;
-    margin-left: 3rem;
     border-radius: 0.25rem;
     cursor: pointer;
     height: fit-content;
 }
+
+.btn:hover {
+    transform: translateY(-1px);
+}
+
+.controls {
+    font-size: 1.1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#reset {
+    background-color: #fff4c8ad;
+}
+
+#start {
+    background-color: #e2ffc8ad;
+}
+
+.unitContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    margin: 5px;
+    width: 40vw;
+}
+@media (max-width: 425px) {
+    .unitContainer {
+        flex-direction: column;
+        height: 150px;
+        align-content: space-around;
+    }
+}
+
 .lightBulb {
+    height: 30vw;
+    float: left;
+    width: 30vw;
+    margin-right: 1vw;
     border-radius: 50%;
-    /* border: 1px solid grey; */
-    height: 10rem;
-    width: 10rem;
-    margin: 3rem;
+
     background: repeating-linear-gradient(
         45deg,
         rgba(0, 0, 0, 0.055),
@@ -50,14 +130,20 @@ body {
 
 .red {
     background-color: #ff1177;
-
     box-shadow: 0 0 0 #fff, 0 0 30px #ff1177, 0 0 60px #ff1177, 0 0 20px #ff1177, 0 0 70px #ff1177, 0 0 90px #ff1177;
 }
 
 .blue {
     background-color: #5454ff;
+    box-shadow: 0 0 0 #fff, 0 0 30px #5454ff, 0 0 60px #5454ff, 0 0 20px #5454ff, 0 0 70px #5454ff, 0 0 90px #5454ff;
 }
 
 .green {
     background-color: #69ff69;
+    box-shadow: 0 0 0 #fff, 0 0 30px #69ff69, 0 0 60px #69ff69, 0 0 20px #69ff69, 0 0 70px #69ff69, 0 0 90px #69ff69;
+}
+
+.lightOff {
+    background-color: #ffffff00;
+    box-shadow: 0 0 0 0;
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function LightBulb({ colour, style }) {
-  console.log(style)
+export default function LightBulb({ colour, id }) {
   return (
-      <div className={"lightBulb " + colour} style={{style}}>
-      </div>
+    // <div className={"lightBulb " + colour}>
+    <div className={"lightBulb lightOff"} id={id}>
+    </div>
   );
 }
