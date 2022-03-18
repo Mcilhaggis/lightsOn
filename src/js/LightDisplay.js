@@ -18,11 +18,13 @@ const colourOptions = [
 
 export default function LightDisplay() {
     const lightbulbs = document.getElementsByClassName("lightBulb")
-    const [seconds, setSeconds] = useState(60);
+    const [seconds, setSeconds] = useState(3);
     const [isActive, setIsActive] = useState(false);
     const [score, setScore] = useState(0)
 
     function startGame() {
+        if(isActive) return
+        if(seconds === 0) return 
         setIsActive(true);
 
         // Add the respective colour class to the light
@@ -93,7 +95,7 @@ export default function LightDisplay() {
 
             <div className="lightsContainer">
                 {colourOptions.map(({ colour }, index) =>
-                    <div className="unitContainer" key={index}>
+                    <div className="lightAndSwitch" key={index}>
                         <LightBulb
                             colour={colour}
                             key={index}

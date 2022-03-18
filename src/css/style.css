@@ -4,11 +4,14 @@
 
 body {
     background-color: #bfeafd;
+    height: 100vh;
 }
 
 h1 {
     text-align: center;
     font-weight: 500;
+    margin-bottom: 8px;
+    font-size: 20px;
 }
 
 .container {
@@ -16,21 +19,20 @@ h1 {
     flex-direction: column;
     width: 80vw;
     text-align: center;
-
 }
 @media (max-width: 768px) {
     .container {
         max-width: 30rem;
         justify-content: center;
-
     }
 }
 
 .App {
-    min-height: 75vh;
+    min-height: 65vh;
     display: flex;
     place-items: center;
     justify-content: center;
+
 }
 
 .lightsContainer {
@@ -38,13 +40,14 @@ h1 {
     display: flex;
     flex-shrink: 1;
     flex-direction: row;
+    justify-content: space-between;
     border: 1.5px white solid;
     padding: 1.5rem;
     border-radius: 25px;
     background: rgba(237, 237, 237, 0.548);
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
-
-    width: 62vw;
+    overflow: hidden;
+    /* width: 62vw; */
 }
 
 @media (max-width: 425px) {
@@ -76,6 +79,14 @@ h1 {
     border-radius: 0.25rem;
     cursor: pointer;
     height: fit-content;
+    z-index: 10;
+    margin-top: 1.5vh;
+}
+
+@media (max-width: 425px) {
+    .btn {
+        margin-top: 1vh;
+    }
 }
 
 .btn:hover {
@@ -96,29 +107,42 @@ h1 {
     background-color: #e2ffc8ad;
 }
 
-.unitContainer {
+.lightAndSwitch {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
+    height: auto;
     margin: 5px;
     width: 40vw;
 }
-@media (max-width: 425px) {
-    .unitContainer {
+
+@media (min-width: 320px) {
+    .lightAndSwitch {
         flex-direction: column;
-        height: 150px;
         align-content: space-around;
+        margin-bottom: 2vh;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+@media (min-width: 768px) {
+    .lightAndSwitch {
+        width: 32vw;
+    }
+}
+
+@media (min-width: 1024px) {
+    .lightAndSwitch {
+        width: 17vw;
     }
 }
 
 .lightBulb {
-    height: 30vw;
-    float: left;
-    width: 30vw;
-    margin-right: 1vw;
     border-radius: 50%;
-
+    flex-grow: 1;
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
     background: repeating-linear-gradient(
         45deg,
         rgba(0, 0, 0, 0.055),
@@ -130,17 +154,17 @@ h1 {
 
 .red {
     background-color: #ff1177;
-    box-shadow: 0 0 0 #fff, 0 0 30px #ff1177, 0 0 60px #ff1177, 0 0 20px #ff1177, 0 0 70px #ff1177, 0 0 90px #ff1177;
+    box-shadow: 0 0 0 #fff, 0 0 30px #ff1177, 0 0 0px #ff1177, 0 0 0px #ff1177, 0 0 20px #ff1177, 0 0 45px #ff1177;
 }
 
 .blue {
     background-color: #5454ff;
-    box-shadow: 0 0 0 #fff, 0 0 30px #5454ff, 0 0 60px #5454ff, 0 0 20px #5454ff, 0 0 70px #5454ff, 0 0 90px #5454ff;
+    box-shadow: 0 0 0 #fff, 0 0 30px #5454ff, 0 0 0px #5454ff, 0 0 0px #5454ff, 0 0 20px #5454ff, 0 0 45px #5454ff;
 }
 
 .green {
     background-color: #69ff69;
-    box-shadow: 0 0 0 #fff, 0 0 30px #69ff69, 0 0 60px #69ff69, 0 0 20px #69ff69, 0 0 70px #69ff69, 0 0 90px #69ff69;
+    box-shadow: 0 0 0 #fff, 0 0 30px #69ff69, 0 0 0px #69ff69, 0 0 0px #69ff69, 0 0 20px #69ff69, 0 0 45px #69ff69;
 }
 
 .lightOff {
