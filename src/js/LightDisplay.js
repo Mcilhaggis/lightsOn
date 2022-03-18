@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import LightBulb from './LightBulb'
+import GameOver from './GameOver'
 import Btn from './Btn'
 
 const colourOptions = [
@@ -18,13 +19,14 @@ const colourOptions = [
 
 export default function LightDisplay() {
     const lightbulbs = document.getElementsByClassName("lightBulb")
-    const [seconds, setSeconds] = useState(3);
+    const [seconds, setSeconds] = useState(60);
     const [isActive, setIsActive] = useState(false);
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
+    const [gameOver, setGameOver] = useState(false)
 
     function startGame() {
-        if(isActive) return
-        if(seconds === 0) return 
+        if (isActive) return
+        if (seconds === 0) return
         setIsActive(true);
 
         // Add the respective colour class to the light
@@ -87,12 +89,12 @@ export default function LightDisplay() {
     return (
         <div className="container">
             <h1>Keep the lights on!</h1>
-            
+
             <div className="scoreboard">
                 <p className="timer">Time: {seconds}</p>
                 <p className="score">Score: {score}</p>
             </div>
-
+            {gameOver && <GameOver />}
             <div className="lightsContainer">
                 {colourOptions.map(({ colour }, index) =>
                     <div className="lightAndSwitch" key={index}>
